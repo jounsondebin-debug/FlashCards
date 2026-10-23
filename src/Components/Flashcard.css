@@ -1,0 +1,58 @@
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 420px;
+  box-sizing: border-box;
+  padding: 2rem 3rem;
+  background: #2e3856;
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+/* quick flip-in whenever the content swaps between question/answer */
+.card > * {
+  animation: flipIn 0.3s ease;
+}
+
+@keyframes flipIn {
+  from {
+    opacity: 0;
+    transform: rotateX(70deg) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* the id number sits in the top-left corner */
+.card p {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #939bb4;
+}
